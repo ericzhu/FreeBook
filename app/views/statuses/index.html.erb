@@ -2,9 +2,13 @@
   <h1>All of the statuses</h1>
 </div>
 
+<div>
+  <%= link_to 'New Status', new_status_path, class: 'btn btn-primary' %>  
+</div>
+
 <% @statuses.each do |status| %>
 <div class="status">
-  <strong><%= status.name %></strong>
+  <strong><%= status.user.full_name %></strong>
   <p>
     <%= status.content %>
   </p>
@@ -19,7 +23,3 @@
 </div>
 
 <% end %>
-
-<br>
-
-<%= link_to 'New Status', new_status_path %>
